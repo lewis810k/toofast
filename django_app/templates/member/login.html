@@ -1,0 +1,15 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+{% if form.non_field_errors %}
+    {{ form.non_field_errors }}
+{% endif %}
+<form action="{% url 'member:login_view'%}" method="POST">{% csrf_token %}
+    {{ form }}
+    <button type="submit">로그인</button>
+</form>
+<h1>{{ request.user}}</h1>
+<form action="{% url 'member:logout_view' %}">
+    <button type="submit">로그아웃</button>
+</form>
+{% endblock %}
