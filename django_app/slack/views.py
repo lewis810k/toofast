@@ -1,6 +1,17 @@
-from django.http import HttpResponse
 from django.shortcuts import render
 
-# Create your views here.
-def get_group_list_view(request):
-    return HttpResponse('get_group_list_view')
+from member.models import MyUser
+
+
+def too_fast_view(request):
+    if request.method == 'POST':
+        user = MyUser.objects.get(username=request.user)
+        print(user.fast_check)
+        user.fast_check = request.POST['fast_check']
+        print(user.fast_check)
+    users = MyUser.objects.all()
+    context ={
+        'users': users,
+    }
+
+    return render(request, 'slack/too_fast.html', context)
