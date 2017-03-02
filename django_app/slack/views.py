@@ -9,6 +9,9 @@ from toofast.settings import config
 def too_fast_view(request):
     user = MyUser.objects.get(username=request.user)
     if request.method == 'POST':
+        user.fast_check = request.POST['fast_check']
+        user.fast_check_time = timezone.now()
+        user.save()
         counts = MyUser.objects.filter(fast_check='1').count()
         if counts >= 2:
             MyUser.objects.all().update(fast_check='0')
@@ -18,9 +21,6 @@ def too_fast_view(request):
             slack = Slacker(token)
             slack.chat.post_message('U3Q05LN4C', '테스트으으으')
 
-        user.fast_check = request.POST['fast_check']
-        user.fast_check_time = timezone.now()
-        user.save()
         return redirect('slack:too_fast')
 
     users = MyUser.objects.all()
