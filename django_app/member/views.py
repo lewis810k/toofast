@@ -62,7 +62,9 @@ def signup_view(request):
 def login_fbv(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
+        print('fdsafds')
         if form.is_valid():
+
             username = form.cleaned_data['user_id']
             password = form.cleaned_data['password']
 

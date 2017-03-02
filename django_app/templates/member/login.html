@@ -4,15 +4,24 @@
 {% if form.non_field_errors %}
     {{ form.non_field_errors }}
 {% endif %}
-<form action="{% url 'member:login_view'%}" method="POST">{% csrf_token %}
+
+<div class="row">
+  <div class="col-md5 col-md-offset-3">
+<form action="{% url 'member:login_view' %}" method="POST">{% csrf_token %}
     {{ form }}
-    <button type="submit">로그인</button>
+    <button type="submit" class="btn btn-primary">로그인</button>
 </form>
-<h1>{{ request.user}}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md1 col-md-offset-7">
 <form action="{% url 'member:logout_view' %}">
-    <button type="submit">로그아웃</button>
+    <button type="submit" class="btn btn-primary">로그아웃</button>
 </form>
 <form action="{% url 'member:signup_view' %}">{% csrf_token%}
-    <button type="submit">회원가입</button>
+    <button type="submit" class="btn btn-primary">회원가입</button>
 </form>
+</div>
+</div>
+
 {% endblock %}

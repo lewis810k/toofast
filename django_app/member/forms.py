@@ -18,7 +18,7 @@ class SignUpForm(UserCreationForm):
         }
 class LoginForm(forms.Form):
     user_id = forms.CharField(max_length=20)
-    password = forms.CharField(max_length=20)
+    password = forms.CharField(max_length=20,widget=forms.PasswordInput)
 
 class ChangeProfile(forms.ModelForm):
     class Meta:
