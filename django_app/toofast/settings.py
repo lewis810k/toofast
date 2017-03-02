@@ -20,11 +20,6 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 ROOT_DIR = os.path.dirname(BASE_DIR)
 CONF_DIR = os.path.join(ROOT_DIR, '.conf')
 config = json.loads(open(os.path.join(CONF_DIR, 'settings_local.json')).read())
-print(config)
-
-# token = config['slack']['my_token']
-# slack = Slacker(token)
-# slack.chat.post_message('U3Q05LN4C', '테스트으으으')
 
 
 # Quick-start development settings - unsuitable for production
