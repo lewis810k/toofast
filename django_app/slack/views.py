@@ -1,6 +1,8 @@
-from django.shortcuts import render, redirect
 
+from toofast import settings
 from member.models import MyUser
+from django.shortcuts import redirect, render
+
 
 def too_fast_view(request):
     if request.method == 'POST':
@@ -17,3 +19,4 @@ def too_fast_view(request):
     }
 
     return render(request, 'slack/too_fast.html', context)
+

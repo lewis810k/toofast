@@ -3,7 +3,7 @@
 {% block content %}
 {{ profiles.username }}
 {{ profiles.name }}
-{{ profiles.git_url }}
+{{ profiles.git_id }}
 {{ profiles.phone_number }}
 {{ profiles.git_service }}
 <form action="{% url 'member:change_profile_view' %}">{% csrf_token %}
