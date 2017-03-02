@@ -8,6 +8,7 @@ class MyUser(AbstractUser):
     phone_number = models.CharField(max_length=15,blank=True)
     git_service = models.BooleanField(default=False)
     fast_check = models.CharField(max_length=1, default='0')
+    fast_check_time = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
         return self.username
