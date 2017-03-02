@@ -3,4 +3,4 @@ from django.shortcuts import redirect
 
 
 def index(request):
-    return redirect('member:signup_view')
+    return redirect('member:login_view')
