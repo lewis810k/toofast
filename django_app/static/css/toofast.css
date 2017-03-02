@@ -1,0 +1,91 @@
+.button-container {
+  position: relative;
+}
+
+.button-container > form {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  margin-top: 200px;
+}
+
+.button-container > form .main-btn {
+  background-color: transparent;
+  border: none;
+  width: 100px;
+  height: 120px;
+  padding: 0;
+  margin: 0;
+  background-size: cover;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button-container > form .main-btn:hover {
+  background-color: #d1d1d1;
+}
+
+.button-container > form .btn-on {
+  background-image: url("/media/slack/kakao4.png");
+}
+
+.button-container > form .btn-off {
+  background-image: url("/media/slack/kakao5.png");
+}
+
+.message-container {
+  position: relative;
+}
+
+.message-container .count-message {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+}
+
+.buttons {
+  width: 100%;
+  height: 300px;
+}
+
+.buttons > ul {
+  width: 150px;
+  margin: 0 auto;
+  margin-top: 200px;
+  padding: 0;
+  list-style-type: none;
+  display: block;
+}
+
+.buttons > ul > li {
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+
+.buttons > ul > li > a {
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.commit-button-container {
+  width: 100%;
+  height: 300px;
+}
+
+.commit-button-container .commit-button-container2 {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.commit-button-container .commit-button-container2 .commit-btn {
+  cursor: pointer;
+  width: 400px;
+  height: 400px;
+  display: inline-block;
+  background-image: url("/media/slack/commit.jpg");
+}
+
+/*# sourceMappingURL=toofast.css.map */

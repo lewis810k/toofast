@@ -40,3 +40,11 @@ def too_fast_view(request):
     }
 
     return render(request, 'slack/too_fast.html', context)
+
+
+def selector_view(request):
+    return render(request, 'slack/selector.html')
+
+
+def one_commit_view(request):
+    return render(request, 'slack/one_commit.html')

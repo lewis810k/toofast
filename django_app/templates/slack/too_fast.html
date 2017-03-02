@@ -2,28 +2,21 @@
 
 {% block content %}
 <div class="button-container">
+    <a href="{% url 'slack:selector' %}">뒤로가기</a>
     <form action="{% url 'slack:too_fast' %}" method="post">{% csrf_token %}
         {% ifequal user.fast_check '0' %}
         <input type="hidden" name="fast_check" value="1">
-        <button type="submit">빨라요!!</button>
+        <button type="submit" class="main-btn btn-on"></button>
         {% else %}
         <input type="hidden" name="fast_check" value="0">
-        <button type="submit">아.. 아닙니다!!</button>
+        <button type="submit" class="main-btn btn-off"></button>
         {% endifequal %}
     </form>
-    <div>빨라요 누른 사람 수 : {{ count }}</div>
 </div>
-<hr>
-<div>현재 로그인: {{ user }}</div>
-<form action="{% url 'member:profile_view' %}" method="POST">{% csrf_token %}
-    <button type="submit">프로필</button>
-</form>
-<div class="member-container">
-    <ul>
-        {% for user in users %}
-        <li>{{ user }}</li>
-        {% endfor %}
-    </ul>
+
+<div class="message-container">
+	<div class="count-message">
+	같은 생각 : {{ count }}
+	</div>
 </div>
-<a href="{% url 'member:test' %}">fdsafdsfdas</a>
 {% endblock %}
