@@ -1,0 +1,14 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+
+<div class="commit-button-container">
+    <a href="{% url 'slack:selector' %}">뒤로가기</a>
+    <div class="commit-button-container2">
+        <a class="commit-btn" href="{% url 'member:test' %}"></a>
+        <div>(사진을 누르시면 오늘 커밋 하지 않은 사람에게 커밋장려 문자 메시지가 발송됩니다.)</div>
+    </div>
+</div>
+
+
+{% endblock %}

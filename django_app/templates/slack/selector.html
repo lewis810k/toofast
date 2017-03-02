@@ -1,0 +1,14 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+
+<div class="buttons">
+    <ul>
+        <li><a href="{% url 'slack:too_fast' %}">빨라요..</a></li>
+        <li><a href="{% url 'slack:one_commit' %}">1일 1커밋</a></li>
+        <li><a href="{% url 'member:profile_view' %}">프로필보기</a></li>
+        <li><a href="{% url 'member:logout_view' %}">로그아웃</a></li>
+    </ul>
+</div>
+
+{% endblock %}
