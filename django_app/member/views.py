@@ -46,3 +46,4 @@ def login_fbv(request):
 def logout_fbv(request):
     logout(request)
     return redirect('member:login_view')
+

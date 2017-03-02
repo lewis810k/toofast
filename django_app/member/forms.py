@@ -8,10 +8,13 @@ class SignUpForm(UserCreationForm):
         model = MyUser
         fields = (
             'username',
+            'name',
+            'git_url',
+            'phone_number',
+            'git_service',
         )
         help_texts = {
             'username': 'test',
-            'password1': 'test pw',
         }
 class LoginForm(forms.Form):
     user_id = forms.CharField(max_length=20)
