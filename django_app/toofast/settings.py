@@ -20,8 +20,13 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 ROOT_DIR = os.path.dirname(BASE_DIR)
 CONF_DIR = os.path.join(ROOT_DIR, '.conf')
 config = json.loads(open(os.path.join(CONF_DIR, 'settings_local.json')).read())
-
-
+STATIC_URL = '/static/'
+STATIC_DIR = os.path.join(ROOT_DIR, 'static')
+STATICFILES_DIRS = (
+    STATIC_DIR,
+)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
@@ -72,6 +77,7 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                'django.template.context_processors.media',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -126,4 +132,3 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
-STATIC_URL = '/static/'

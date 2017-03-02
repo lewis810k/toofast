@@ -112,8 +112,8 @@ def change_profile(request):
 
 
 def git_repositery(request):
-    client_id = settings.config['git']['client_id']
-    client_secret = settings.config['git']['client_secret']
+    # client_id = settings.config['git']['client_id']
+    # client_secret = settings.config['git']['client_secret']
     users = MyUser.objects.filter(git_service='1')
 
     sms_list = []
@@ -152,14 +152,17 @@ def git_repositery(request):
         now = datetime.datetime.now()
         nowDate = now.strftime('%Y-%m-%d')
         # newtime = ['2017-03-03T04:26:45Z','2017-02-29T04:26:45Z','2017-01-03T04:26:45Z','2017-07-02T04:26:45Z','2017-03-03T04:26:45Z']
-        flag = False
-        for i in date_list:
-            datenow = re.sub(r'(\d[^T]+).*', r'\1', i)
-            if nowDate == datenow:
-                flag = True
-                break
-        if flag == False:
-            sms_list.append(user.phone_number)
+        # flag = False
+        # for i in date_list:
+        #     datenow = re.sub(r'(\d[^T]+).*', r'\1', i)
+        #     if nowDate == datenow:
+        #         flag = True
+        #         break
+        # if flag == False:
+        sms_list.append(user.phone_number)
     length = len(sms_list)
-    for i in range(length):
-        send(i)
+    if length == 0:
+        pass
+    else:
+        for i in sms_list:
+            send(i)

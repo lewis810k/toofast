@@ -19,7 +19,7 @@ def too_fast_view(request):
             print("문자보냄!!")
             token = config['slack']['my_token']
             slack = Slacker(token)
-            slack.chat.post_message('U3Q05LN4C', '테스트으으으')
+            slack.chat.post_message('U3NTFCJER', '테스트으으으')
 
         return redirect('slack:too_fast')
 
@@ -29,7 +29,7 @@ def too_fast_view(request):
         if user.fast_check_time:
             time = user.fast_check_time
             time_diff = (timezone.now() - time).seconds
-            if time_diff > 30:
+            if time_diff > 10:
                 user.fast_check = 0
                 user.save()
 
