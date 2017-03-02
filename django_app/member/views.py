@@ -11,7 +11,7 @@ def signup_view(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('member:signup_view')
+            return redirect('member:lo')
     else:
         form = SignUpForm()
     context = {
@@ -47,3 +47,5 @@ def logout_fbv(request):
     logout(request)
     return redirect('member:login_view')
 
+# def change_profile(request):
+#
