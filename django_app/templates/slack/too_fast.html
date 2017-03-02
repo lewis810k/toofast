@@ -11,12 +11,10 @@
         <button type="submit">아.. 아닙니다!!</button>
         {% endifequal %}
     </form>
-    <div>빨라요 누른 사람 수 : {{  }}</div>
+    <div>빨라요 누른 사람 수 : {{ count }}</div>
 </div>
 <hr>
 <div>현재 로그인: {{ user }}</div>
-<div>
-    <form action="{% url 'member:%}"></form></div>
 <div class="member-container">
     <ul>
         {% for user in users %}
