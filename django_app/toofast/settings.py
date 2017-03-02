@@ -21,10 +21,11 @@ ROOT_DIR = os.path.dirname(BASE_DIR)
 CONF_DIR = os.path.join(ROOT_DIR, '.conf')
 config = json.loads(open(os.path.join(CONF_DIR, 'settings_local.json')).read())
 STATIC_URL = '/static/'
-STATIC_DIR = os.path.join(ROOT_DIR, 'static')
-STATICFILES_DIRS = (
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
     STATIC_DIR,
-)
+]
+print(STATIC_DIR)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Quick-start development settings - unsuitable for production
@@ -121,7 +122,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ko-kr'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
