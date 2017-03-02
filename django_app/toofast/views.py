@@ -1,5 +1,6 @@
 from django.http import HttpResponse
+from django.shortcuts import redirect
 
 
 def index(request):
-    return HttpResponse('main page')
+    return redirect('member:signup_view')
