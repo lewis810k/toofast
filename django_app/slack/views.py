@@ -1,8 +1,10 @@
 
 from django.shortcuts import render, redirect
 from django.utils import timezone
+from slacker import Slacker
 
 from member.models import MyUser
+from toofast.settings import config
 
 
 def too_fast_view(request):
@@ -13,6 +15,9 @@ def too_fast_view(request):
             MyUser.objects.all().update(fast_check='0')
             # 문자보내기
             print("문자보냄!!")
+            token = config['slack']['my_token']
+            slack = Slacker(token)
+            slack.chat.post_message('U3Q05LN4C', '테스트으으으')
 
         user.fast_check = request.POST['fast_check']
         user.fast_check_time = timezone.now()
