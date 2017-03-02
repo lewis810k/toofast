@@ -31,7 +31,7 @@ def login_fbv(request):
 
             if user is not None:
                 login(request, user)
-                return redirect('member:login_view')
+                return redirect('slack:too_fast')
             else:
                 form.add_error(None, 'ID or PW incorrect')
 
