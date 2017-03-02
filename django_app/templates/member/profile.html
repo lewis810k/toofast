@@ -1,0 +1,12 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+{{ profiles.username }}
+{{ profiles.name }}
+{{ profiles.git_url }}
+{{ profiles.phone_number }}
+{{ profiles.git_service }}
+<form action="{% url 'member:change_profile_view' %}">{% csrf_token %}
+    <button type="submit">프로필 변경</button>
+</form>
+{% endblock %}

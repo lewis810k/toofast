@@ -9,7 +9,7 @@ class SignUpForm(UserCreationForm):
         fields = (
             'username',
             'name',
-            'git_url',
+            'git_id',
             'phone_number',
             'git_service',
         )
@@ -19,3 +19,12 @@ class SignUpForm(UserCreationForm):
 class LoginForm(forms.Form):
     user_id = forms.CharField(max_length=20)
     password = forms.CharField(max_length=20)
+
+class ChangeProfile(forms.ModelForm):
+    class Meta:
+        model = MyUser
+        fields = (
+            'git_id',
+            'phone_number',
+            'git_service',
+        )
