@@ -1,0 +1,26 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+<div class="button-container">
+    <form action="{% url 'slack:too_fast' %}" method="post">{% csrf_token %}
+        {% ifequal user.fast_check '0' %}
+        <input type="hidden" name="fast_check" value="1">
+        <button type="submit">빨라요!!</button>
+        {% else %}
+        <input type="hidden" name="fast_check" value="0">
+        <button type="submit">아.. 아닙니다!!</button>
+        {% endifequal %}
+    </form>
+</div>
+<hr>
+<div>현재 로그인: {{ user }}</div>
+
+<div class="member-container">
+    <ul>
+        {% for user in users %}
+        <li>{{ user }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

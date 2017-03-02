@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index, name='index'),
     url(r'^member/', include('member.urls')),
+    url(r'^slack/', include('slack.urls')),
 ]
